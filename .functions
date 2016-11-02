@@ -1,0 +1,67 @@
+# -------------------------------------------------------------------
+# GENERAL FUNCTION
+# -------------------------------------------------------------------
+# Make a directory and cd to it
+function md() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Find shorthand
+function f() {
+	find . -name "$1" 2>&1 | grep -v 'Permission denied'
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+	local port="${1:-3000}";
+	sleep 1 && open "http://localhost:${port}/" &
+	# Set the default Content-Type to `text/plain` instead of `application/octet-stream`
+	# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port";
+}
+
+# -------------------------------------------------------------------
+# GIT
+# -------------------------------------------------------------------
+function gcreate() {
+  git create -d "$(node -e 'process.stdout.write(require('./package.json').description)')" && gh-home
+}
+
+function gcif() {
+  GIT_AUTHOR_DATE="$(date -v $1H)" GIT_COMMITTER_DATE="$(date -v $1H)" git commit
+}
+# -------------------------------------------------------------------
+# MISC
+# -------------------------------------------------------------------
+# Make a gif file from .mov, requires size, source, and destination arguments
+function gif() {
+  # 1280x800
+  ffmpeg -i $1 -s $3 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=5 > $2.gif
+}
+
+# Added by travis gem
+[ -f /Users/lvarayut/.travis/travis.sh ] && source /Users/lvarayut/.travis/travis.sh
+
+
+# Update contributors list
+function upcon() {
+  githubcontrib --owner lvarayut --repo $1 --cols 6 --showlogin --sortBy contributions --sortOrder desc | pbcopy
+}
+
+# Tree command with automatically ignoring everything specified in .gitignore, if the file exists
+function tt() {
+  if [ -f .gitignore ]; then
+    tree -vC -I "$(cat .gitignore | tr '/\n' '|' | tr '\n' '|' | tr -s '||')END"
+  else
+    tree -vC
+  fi
+}

@@ -1,0 +1,52 @@
+source ~/.vimrc
+
+inoremap jk <ESC>
+
+" Reset the arrow keys
+nno <up> <up>
+nno <down> <down>
+nno <left> <left>
+nno <right> <right>
+ino <up> <up>
+ino <down> <down>
+ino <left> <left>
+ino <right> <right>
+vno <up> <up>
+vno <down> <down>
+vno <left> <left>
+vno <right> <right>
+cno <up> <up>
+cno <down> <down>
+
+" Actions
+" Using :actionlist to see all the available actions
+nnoremap ]f :action AceJumpAction<CR>
+nnoremap ]t :action NextTab<CR>
+nnoremap [t :action PreviousTab<CR>
+nnoremap <leader>q :action CloseEditor<CR>
+nnoremap <leader>c :action CloseAllEditors<CR>
+nnoremap <leader>d :action DashLauncherAction<CR>
+nnoremap <leader>a :action FindInPath<CR>
+nnoremap <leader>. :action ReopenClosedTab<CR>
+nnoremap <leader>w :action SaveAll<CR>
+nnoremap <leader>= :action ReformatCode<CR>
+nnoremap <C-w>v> :action SplitVertically<CR>
+nnoremap <C-w>s :action SplitHorizontally<CR>
+nnoremap <SPACE> :action CollapseSelection<CR>
+nnoremap / :action Find<CR>
+
+"nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+
+" FIXME Bug in current WS
+"nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>f :action SearchEverywhere<CR>
+
+" FIXME It doesn't work for some reason
+"nnoremap <leader><TAB> :action "FileChooser.GotoProject"<CR>
+
+" Reload .ideavimrc
+nnoremap <leader>r :source ~/.ideavimrc<CR>
+
+" Plugins
+set surround
+

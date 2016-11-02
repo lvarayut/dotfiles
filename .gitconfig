@@ -1,0 +1,31 @@
+[user]
+	name = Varayut Lerdkanlayanawat
+	email = l.varayut@gmail.com
+[merge]
+	tool = opendiff
+[diff]
+	tool = opendiff
+[difftool]
+	prompt = false
+[url "https://"]
+  insteadOf = git://
+[core]
+	autocrlf = input
+  safecrlf = false
+	excludesfile = /Users/lvarayut/.gitignore_global
+	whitespace = cr-at-eol
+[push]
+  default = simple
+[alias]
+  a = add
+  co = checkout
+  cl = clone
+  ci = commit
+  br = branch
+  s = status
+  r = remote
+  pl = pull origin master
+  ps = push origin master
+  l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  # show a pretty log graph
+  lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'

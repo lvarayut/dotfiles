@@ -1,0 +1,158 @@
+# -------------------------------------------------------------------
+# SETTING
+# -------------------------------------------------------------------
+# Remove all aliases provided by zsh
+unalias -m "*"
+
+# Alias hub to be a normal git command
+eval "$(hub alias -s)"
+
+# -------------------------------------------------------------------
+# VARIABLE
+# -------------------------------------------------------------------
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorFlag="--color"
+else # OS X `ls`
+	colorFlag="-G"
+fi
+
+# Use ag if it"s installed
+if ag > /dev/null 2>&1; then
+  searchCommand="grep"
+else
+  searchCommand="ag"
+fi
+
+
+# -------------------------------------------------------------------
+# NAVIGATION
+# -------------------------------------------------------------------
+alias ...="../.."
+alias ....="../../.."
+alias .....="../../../.."
+alias ......="../../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
+# -------------------------------------------------------------------
+# GENERAL SHORTCUT
+# -------------------------------------------------------------------
+alias edit="vim ~/.zshrc"
+alias aliases="vim ~/.aliases"
+alias reload="source ~/.zshrc"
+alias su="sudo "
+alias sudo="sudo "
+alias v="vim"
+alias c="clear"
+alias p="pwd"
+alias h="history"
+alias hf="history | ${searchCommand} --color"
+alias mk="mkdir -p"
+
+# -------------------------------------------------------------------
+# LIST
+# -------------------------------------------------------------------
+# Always use color when piping to grep or ag
+export CLICOLOR_FORCE=1
+
+alias l="ls ${colorFlag}"
+alias la="ls -a ${colorFlag}"
+alias ll="l -l ${colorFlag}"
+alias lla="l -la ${colorFlag}"
+alias ld="ls -l ${colorFlag} | ${searchCommand} '^d'"
+alias lf="ls -a ${colorFlag} | ${searchCommand}"
+
+# -------------------------------------------------------------------
+# FILE
+# -------------------------------------------------------------------
+alias mv="mv -v"
+alias rm="rm -i -v"
+alias cp="cp -v"
+
+# -------------------------------------------------------------------
+# MISC
+# -------------------------------------------------------------------
+# Speed test
+#alias st="curl http://speedtest.sng01.softlayer.com/downloads/test100.zip > /dev/null"
+alias st="speed-test"
+
+alias ip="ipconfig getifaddr en0"
+alias diskspace="df -PkHl"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Update OSX software, Homebrew and Npm
+alias update="sudo softwareupdate -ia; brew update -v; brew upgrade -v; brew cleanup; brew prune; npm install npm -g; npm update -g"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# -------------------------------------------------------------------
+# GIT
+# -------------------------------------------------------------------
+alias g="git"
+alias gh="gh-home"
+alias gr="git remote"
+alias ga="git add"
+alias gb="git branch"
+alias gco="git checkout"
+alias gci="git commit"
+alias gcl="git clone"
+alias gl="git lg"
+alias gpl="git pull"
+alias gplm="git pull origin master"
+alias gps="git push"
+alias gpsm="git push origin master"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gs="git status"
+alias gsa="git stash apply"
+alias gsd="git stash drop"
+alias gss="git stash save"
+alias gsp="git stash pop"
+alias gsl="git stash list"
+alias gwa="git worktree add"
+alias gwl="git worktree list"
+alias gsu="git submodule update --remote --merge"
+alias gcii="git commit -m 'init と༼ ◕_◕ と ༽'"
+alias gbr="git browse"
+
+# Undo a push
+alias gpsu="git push -f origin HEAD^:master"
+
+# -------------------------------------------------------------------
+# TMUX
+# -------------------------------------------------------------------
+alias t="tmux"
+alias ta="tmux attach -t"
+alias tls="tmux ls"
+alias tnsa="tmux new-session -t"
+alias tns="tmux new-session -s"
+alias tks="tmux kill-session -t"
+
+# -------------------------------------------------------------------
+# NPM
+# -------------------------------------------------------------------
+alias ni="npm install"
+alias nis="npm install --save"
+alias nid="npm install --save-dev"
+alias nig="npm install --global"
+alias nlg="npm list -g --depth=0"
+alias ns="clear && npm start"
+alias nr="clear && npm run"
+alias nt="clear && npm test"
+alias nl="npm link"
+alias nu="npm update"
+alias nc="npm cache clean && rm -rf node_modules && npm install"
+
+# -------------------------------------------------------------------
+# DATABASES
+# -------------------------------------------------------------------
+alias arangod="/usr/local/sbin/arangod --server.authentication false"
