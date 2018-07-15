@@ -29,6 +29,7 @@ nnoremap <leader>d :action DashLauncherAction<CR>
 nnoremap <leader>a :action FindInPath<CR>
 nnoremap <leader>. :action ReopenClosedTab<CR>
 nnoremap <leader>w :action SaveAll<CR>
+nnoremap <leader>h :action Annotate<CR>
 nnoremap <leader>= :action ReformatCode<CR>
 nnoremap <C-w>v> :action SplitVertically<CR>
 nnoremap <C-w>s :action SplitHorizontally<CR>

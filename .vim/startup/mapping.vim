@@ -116,6 +116,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<leader><CR>'
 " Dash
 nmap <silent> <leader>d <Plug>DashSearch
 
+" Git
+nmap <silent> <leader>h :Gblame<CR>
+
 " Syntastic
 nnoremap <silent> <leader>s :SyntasticCheck<CR>
 
