@@ -25,7 +25,7 @@ nnoremap ]t :action NextTab<CR>
 nnoremap [t :action PreviousTab<CR>
 nnoremap <leader>q :action CloseEditor<CR>
 nnoremap <leader>c :action CloseAllEditors<CR>
-nnoremap <leader>d :action DashLauncherAction<CR>
+nnoremap <leader>d :action SmartSearchAction<CR>
 nnoremap <leader>a :action FindInPath<CR>
 nnoremap <leader>. :action ReopenClosedTab<CR>
 nnoremap <leader>w :action SaveAll<CR>
