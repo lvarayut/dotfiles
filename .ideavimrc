@@ -20,7 +20,7 @@ cno <down> <down>
 
 " Actions
 " Using :actionlist to see all the available actions
-nnoremap ]f :action AceJumpAction<CR>
+nnoremap ]f :action AceAction<CR>
 nnoremap ]t :action NextTab<CR>
 nnoremap [t :action PreviousTab<CR>
 nnoremap <leader>q :action CloseEditor<CR>
