@@ -7,6 +7,10 @@ export ZSH=/Users/lvarayut/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="pure"
 
+# .zshrc
+autoload -U promptinit; promptinit
+prompt pure
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
