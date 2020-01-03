@@ -38,12 +38,13 @@ alias -- -="cd -"
 # -------------------------------------------------------------------
 # GENERAL SHORTCUT
 # -------------------------------------------------------------------
+alias v="mvim -v"
+alias vim="mvim -v"
 alias edit="vim ~/.zshrc"
 alias aliases="vim ~/.aliases"
 alias reload="source ~/.zshrc"
 alias su="sudo "
 alias sudo="sudo "
-alias v="vim"
 alias c="clear"
 alias p="pwd"
 alias h="history"
