@@ -1,7 +1,12 @@
 syntax enable
 set background=dark
 set t_Co=256
-colorscheme gruvbox
+
+" This gets rid of the grey background
+let g:solarized_termtrans = 1
+
+colorscheme solarized
+
 "let g:hybrid_custom_term_colors = 1
 "colorscheme hybrid
 
