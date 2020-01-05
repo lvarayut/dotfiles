@@ -53,7 +53,7 @@ prompt pure
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower git gulp node npm docker zsh-autosuggestions)
+plugins=(bower git node npm docker zsh-autosuggestions)
 
 # User configuration
 
@@ -104,6 +104,9 @@ export PATH=${PATH}:${ANDROID_HOME}/tools
 
 # Auto-suggestions
 bindkey '^ ' autosuggest-execute
+
+# fix auto-suggestions text isn't visible in solarized theme
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
