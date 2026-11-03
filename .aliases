@@ -5,7 +5,7 @@
 unalias -m "*"
 
 # Alias hub to be a normal git command
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 # -------------------------------------------------------------------
 # VARIABLE
@@ -38,13 +38,12 @@ alias -- -="cd -"
 # -------------------------------------------------------------------
 # GENERAL SHORTCUT
 # -------------------------------------------------------------------
-alias v="mvim -v"
-alias vim="mvim -v"
 alias edit="vim ~/.zshrc"
 alias aliases="vim ~/.aliases"
 alias reload="source ~/.zshrc"
 alias su="sudo "
 alias sudo="sudo "
+alias v="vim -v"
 alias c="clear"
 alias p="pwd"
 alias h="history"
@@ -67,9 +66,9 @@ alias lf="ls -a ${colorFlag} | ${searchCommand}"
 # -------------------------------------------------------------------
 # FILE
 # -------------------------------------------------------------------
-alias mv="mv -v"
-alias rm="rm -i -v"
-alias cp="cp -v"
+#alias mv="mv -v"
+#alias rm="rm -i -v"
+#alias cp="cp -v"
 
 # -------------------------------------------------------------------
 # MISC
@@ -99,14 +98,13 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # GIT
 # -------------------------------------------------------------------
 alias g="git"
-alias gh="gh-home"
 alias gr="git remote"
 alias ga="git add"
 alias gb="git branch"
 alias gco="git checkout"
 alias gci="git commit"
 alias gcl="git clone"
-alias gl="git lg"
+alias gl="git log"
 alias gpl="git pull"
 alias gplm="git pull origin master"
 alias gps="git push"
@@ -124,6 +122,12 @@ alias gwl="git worktree list"
 alias gsu="git submodule update --remote --merge"
 alias gcii="git commit -m 'init と༼ ◕_◕ と ༽'"
 alias gbr="git browse"
+
+gcorb() {
+  git remote set-branches --add origin "$1" &&
+  git fetch origin "$1" &&
+  git checkout "$1"
+}
 
 # Undo a push
 alias gpsu="git push -f origin HEAD^:master"

@@ -23,7 +23,7 @@ set nostartofline " prevent cursor jumps back to the beginning of the line when 
 set ttyfast " fast redraw the screen
 set lazyredraw " buffer screen updates instead of updating all the time
 set fileformat=unix " force reading files as unix
-set diffopt+=iwhite " Ignore whitespace when doing git diff
+"set diffopt+=iwhite " Ignore whitespace when doing git diff
 
 
 " Errors

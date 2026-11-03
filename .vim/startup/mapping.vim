@@ -1,18 +1,18 @@
 " Disable arrow keys
-nno <up> <Nop>
-nno <down> <Nop>
-nno <left> <Nop>
-nno <right> <Nop>
-ino <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-vno <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-cno <up> <Nop>
-cno <down> <Nop>
+"nno <up> <Nop>
+"nno <down> <Nop>
+"nno <left> <Nop>
+"nno <right> <Nop>
+"ino <up> <Nop>
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
+"vno <up> <Nop>
+"vno <down> <Nop>
+"vno <left> <Nop>
+"vno <right> <Nop>
+"cno <up> <Nop>
+"cno <down> <Nop>
 
 " General keys
 let mapleader=','
