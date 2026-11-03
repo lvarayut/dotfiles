@@ -1,0 +1,17 @@
+# Copy to ~/.gitconfig.local. Loaded after ~/.gitconfig, so values here win.
+
+# Work identity
+#[user]
+#	name = Alex Lerdkanlayanawat
+#	email = you@company.com
+
+# Git LFS (after `brew install git-lfs`)
+#[filter "lfs"]
+#	required = true
+#	clean = git-lfs clean -- %f
+#	smudge = git-lfs smudge -- %f
+#	process = git-lfs filter-process
+
+# Background maintenance for big repos (`git maintenance start`)
+#[maintenance]
+#	repo = /Users/you/work/big-repo
