@@ -1,0 +1,21 @@
+# Copy to ~/.zshrc.local and keep machine-specific settings here.
+# This file is sourced at the end of ~/.zshrc and is not tracked.
+
+# --- Examples from a work machine -----------------------------------
+
+# Nix
+# if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi
+
+# Pin a Homebrew node version
+# export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
+
+# JetBrains license server
+# export JETBRAINS_LICENSE_SERVER=https://example.com/
+
+# Google Cloud SDK
+# if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+# if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+# Extra tool paths
+# export PATH="$HOME/.local/share/canva-git/bin:$PATH"
+# export PATH="$HOME/.local/share/taz/tools/bin:$PATH"

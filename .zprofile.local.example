@@ -1,0 +1,7 @@
+# Copy to ~/.zprofile.local for machine-specific PATH entries.
+
+# Docker Desktop
+# export PATH="$PATH:$HOME/.docker/bin"
+
+# JetBrains Toolbox
+# export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
