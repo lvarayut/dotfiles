@@ -17,14 +17,6 @@ else # OS X `ls`
 	colorFlag="-G"
 fi
 
-# Use ag if it"s installed
-if ag > /dev/null 2>&1; then
-  searchCommand="grep"
-else
-  searchCommand="ag"
-fi
-
-
 # -------------------------------------------------------------------
 # NAVIGATION
 # -------------------------------------------------------------------
@@ -47,7 +39,6 @@ alias v="vim -v"
 alias c="clear"
 alias p="pwd"
 alias h="history"
-alias hf="history | ${searchCommand} --color"
 alias mk="mkdir -p"
 
 # -------------------------------------------------------------------
@@ -60,8 +51,6 @@ alias l="ls ${colorFlag}"
 alias la="ls -a ${colorFlag}"
 alias ll="l -l ${colorFlag}"
 alias lla="l -la ${colorFlag}"
-alias ld="ls -l ${colorFlag} | ${searchCommand} '^d'"
-alias lf="ls -a ${colorFlag} | ${searchCommand}"
 
 # -------------------------------------------------------------------
 # FILE
@@ -82,9 +71,6 @@ alias diskspace="df -PkHl"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# Update OSX software, Homebrew and Npm
-alias update="sudo softwareupdate -ia; brew update -v; brew upgrade -v; brew cleanup; brew prune; npm install npm -g; npm update -g"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
