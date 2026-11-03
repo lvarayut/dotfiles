@@ -1,9 +1,14 @@
 # Copy to ~/.gitconfig.local. Loaded after ~/.gitconfig, so values here win.
 
-# Work identity
+# Work identity for every repo on this machine
 #[user]
 #	name = Alex Lerdkanlayanawat
 #	email = you@company.com
+
+# ...or only for repos under a folder (keeps the personal email elsewhere).
+# Put the [user] block in ~/.gitconfig.work.
+#[includeIf "gitdir:~/work/"]
+#	path = ~/.gitconfig.work
 
 # Git LFS (after `brew install git-lfs`)
 #[filter "lfs"]
